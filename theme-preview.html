@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForIT Dynamics 365 Theme Preview</title>
+    <link rel="stylesheet" href="webresources/styles/custom.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+        }
+        .preview-section {
+            margin-bottom: 40px;
+        }
+        .preview-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #142F43;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #5DADE2;
+        }
+        .color-palette {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        .color-swatch {
+            width: 120px;
+            text-align: center;
+        }
+        .color-box {
+            height: 80px;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 8px;
+        }
+        .color-label {
+            font-size: 12px;
+            color: #4A5F7A;
+            font-weight: 600;
+        }
+        .color-value {
+            font-size: 11px;
+            color: #A0B3C7;
+            font-family: monospace;
+        }
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .mock-form {
+            padding: 20px;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(20, 47, 67, 0.12);
+        }
+        .mock-input {
+            width: 100%;
+            padding: 8px 12px;
+            margin-bottom: 15px;
+            border: 2px solid rgba(20, 47, 67, 0.2);
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        .mock-input:focus {
+            outline: none;
+            border-color: #5DADE2;
+            box-shadow: 0 0 0 3px rgba(93, 173, 226, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="preview-section">
+        <h1 class="preview-title">ForIT Dynamics 365 Sales Theme Preview</h1>
+        <p style="color: #4A5F7A; font-size: 16px;">Custom theme matching forit.io brand identity</p>
+    </div>
+
+    <!-- Color Palette -->
+    <div class="preview-section">
+        <h2 class="preview-title">Color Palette</h2>
+        <div class="color-palette">
+            <div class="color-swatch">
+                <div class="color-box" style="background: #142F43;"></div>
+                <div class="color-label">Primary Navy</div>
+                <div class="color-value">#142F43</div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #5DADE2;"></div>
+                <div class="color-label">Light Blue</div>
+                <div class="color-value">#5DADE2</div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #3498DB;"></div>
+                <div class="color-label">Accent Blue</div>
+                <div class="color-value">#3498DB</div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #0A1A26;"></div>
+                <div class="color-label">Dark Navy</div>
+                <div class="color-value">#0A1A26</div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #F8FBFF;"></div>
+                <div class="color-label">Background</div>
+                <div class="color-value">#F8FBFF</div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #27AE60;"></div>
+                <div class="color-label">Success</div>
+                <div class="color-value">#27AE60</div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #F39C12;"></div>
+                <div class="color-label">Warning</div>
+                <div class="color-value">#F39C12</div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #E74C3C;"></div>
+                <div class="color-label">Error</div>
+                <div class="color-value">#E74C3C</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar Mock -->
+    <div class="preview-section">
+        <h2 class="preview-title">Navigation Bar</h2>
+        <div class="navBar" style="padding: 15px; border-radius: 6px;">
+            <span class="navBarButton" style="padding: 10px 20px; margin-right: 10px;">Dashboard</span>
+            <span class="navBarButton selected" style="padding: 10px 20px; margin-right: 10px;">Accounts</span>
+            <span class="navBarButton" style="padding: 10px 20px; margin-right: 10px;">Opportunities</span>
+            <span class="navBarButton" style="padding: 10px 20px;">Reports</span>
+        </div>
+    </div>
+
+    <!-- Components -->
+    <div class="preview-section">
+        <h2 class="preview-title">UI Components</h2>
+        <div class="component-grid">
+            <!-- Buttons -->
+            <div>
+                <h3 style="color: #142F43; margin-bottom: 15px;">Buttons</h3>
+                <button class="custom-button" style="margin-right: 10px;">Primary Button</button>
+                <button class="custom-button secondary">Secondary Button</button>
+                <div style="margin-top: 10px;">
+                    <button class="custom-button" disabled style="opacity: 0.5; cursor: not-allowed;">Disabled</button>
+                </div>
+            </div>
+
+            <!-- Status Badges -->
+            <div>
+                <h3 style="color: #142F43; margin-bottom: 15px;">Status Badges</h3>
+                <span class="status-badge active">Active</span>
+                <span class="status-badge pending" style="margin-left: 10px;">Pending</span>
+                <span class="status-badge inactive" style="margin-left: 10px;">Inactive</span>
+            </div>
+
+            <!-- Form Section -->
+            <div class="ms-crm-Form-Section" style="grid-column: span 2;">
+                <div class="ms-crm-Form-SectionHeader">Account Information</div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div>
+                        <label style="color: #142F43; font-size: 13px; font-weight: 600; display: block; margin-bottom: 5px;">Account Name *</label>
+                        <input type="text" class="mock-input" placeholder="Enter account name" value="ForIT Solutions">
+                    </div>
+                    <div>
+                        <label style="color: #142F43; font-size: 13px; font-weight: 600; display: block; margin-bottom: 5px;">Industry</label>
+                        <select class="mock-input">
+                            <option>Technology</option>
+                            <option>Aviation</option>
+                            <option>Consulting</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="color: #142F43; font-size: 13px; font-weight: 600; display: block; margin-bottom: 5px;">Phone</label>
+                        <input type="tel" class="mock-input" placeholder="(555) 123-4567">
+                    </div>
+                    <div>
+                        <label style="color: #142F43; font-size: 13px; font-weight: 600; display: block; margin-bottom: 5px;">Email</label>
+                        <input type="email" class="mock-input" placeholder="contact@forit.io">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Cards -->
+    <div class="preview-section">
+        <h2 class="preview-title">Dashboard Cards</h2>
+        <div class="component-grid">
+            <div class="ms-crm-Dashboard-Card">
+                <div class="ms-crm-Dashboard-Card-Title">Sales Pipeline</div>
+                <div style="color: #4A5F7A;">
+                    <div style="font-size: 32px; color: #142F43; font-weight: 700;">$2.4M</div>
+                    <div style="font-size: 14px; margin-top: 5px;">12 Active Opportunities</div>
+                </div>
+            </div>
+            <div class="ms-crm-Dashboard-Card">
+                <div class="ms-crm-Dashboard-Card-Title">New Leads</div>
+                <div style="color: #4A5F7A;">
+                    <div style="font-size: 32px; color: #27AE60; font-weight: 700;">47</div>
+                    <div style="font-size: 14px; margin-top: 5px;">This Month</div>
+                </div>
+            </div>
+            <div class="ms-crm-Dashboard-Card">
+                <div class="ms-crm-Dashboard-Card-Title">Win Rate</div>
+                <div style="color: #4A5F7A;">
+                    <div style="font-size: 32px; color: #5DADE2; font-weight: 700;">68%</div>
+                    <div style="font-size: 14px; margin-top: 5px;">Last 90 Days</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Grid/List View -->
+    <div class="preview-section">
+        <h2 class="preview-title">List View</h2>
+        <div class="ms-crm-List">
+            <div class="ms-crm-List-Header" style="padding: 12px 20px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; font-size: 13px;">
+                <div>Account Name</div>
+                <div>Industry</div>
+                <div>Revenue</div>
+                <div>Status</div>
+            </div>
+            <div class="ms-crm-List-Row" style="padding: 12px 20px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; font-size: 14px;">
+                <div style="color: #142F43; font-weight: 600;">Contoso Ltd</div>
+                <div style="color: #4A5F7A;">Technology</div>
+                <div style="color: #4A5F7A;">$850K</div>
+                <div><span class="status-badge active">Active</span></div>
+            </div>
+            <div class="ms-crm-List-Row" style="padding: 12px 20px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; font-size: 14px; background-color: rgba(248, 251, 255, 0.5);">
+                <div style="color: #142F43; font-weight: 600;">Adventure Works</div>
+                <div style="color: #4A5F7A;">Manufacturing</div>
+                <div style="color: #4A5F7A;">$1.2M</div>
+                <div><span class="status-badge active">Active</span></div>
+            </div>
+            <div class="ms-crm-List-Row" style="padding: 12px 20px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; font-size: 14px;">
+                <div style="color: #142F43; font-weight: 600;">Northwind Traders</div>
+                <div style="color: #4A5F7A;">Retail</div>
+                <div style="color: #4A5F7A;">$650K</div>
+                <div><span class="status-badge pending">Pending</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Business Process Flow -->
+    <div class="preview-section">
+        <h2 class="preview-title">Business Process Flow</h2>
+        <div class="ms-crm-BP-StageContainer" style="padding: 20px; display: flex; gap: 10px;">
+            <div class="ms-crm-BP-Stage completed" style="padding: 12px 20px; border-radius: 6px; flex: 1; text-align: center;">
+                ✓ Qualify
+            </div>
+            <div class="ms-crm-BP-Stage active" style="padding: 12px 20px; border-radius: 6px; flex: 1; text-align: center;">
+                → Develop
+            </div>
+            <div class="ms-crm-BP-Stage" style="padding: 12px 20px; border-radius: 6px; flex: 1; text-align: center; background: #E8F4FD; color: #4A5F7A;">
+                Propose
+            </div>
+            <div class="ms-crm-BP-Stage" style="padding: 12px 20px; border-radius: 6px; flex: 1; text-align: center; background: #E8F4FD; color: #4A5F7A;">
+                Close
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="preview-section">
+        <h2 class="preview-title">Loading States</h2>
+        <div style="display: flex; align-items: center; gap: 30px;">
+            <div class="custom-loader"></div>
+            <div style="color: #4A5F7A;">Loading data...</div>
+        </div>
+    </div>
+</body>
+</html>

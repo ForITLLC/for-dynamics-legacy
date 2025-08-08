@@ -1,0 +1,420 @@
+/* Dynamics 365 Sales - ForIT Custom Theme */
+/* Matching forit.io brand identity */
+
+:root {
+    --primary-color: #142F43;      /* ForIT Navy Blue */
+    --secondary-color: #5DADE2;    /* ForIT Light Blue */
+    --accent-color: #3498DB;       /* Accent Blue */
+    --success-color: #27AE60;
+    --warning-color: #F39C12;
+    --error-color: #E74C3C;
+    --background-color: #F8FBFF;   /* Light blue-tinted background */
+    --surface-color: #FFFFFF;
+    --dark-navy: #0A1A26;          /* Darker navy for contrast */
+    --text-primary: #142F43;       /* Navy text */
+    --text-secondary: #4A5F7A;     /* Muted navy */
+    --text-disabled: #A0B3C7;      /* Light blue-gray */
+    --text-on-dark: #FFFFFF;       /* White text on dark backgrounds */
+    --border-radius: 6px;
+    --spacing-unit: 8px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-sm: 0 2px 4px rgba(20, 47, 67, 0.08);
+    --shadow-md: 0 4px 12px rgba(20, 47, 67, 0.12);
+    --shadow-lg: 0 8px 24px rgba(20, 47, 67, 0.16);
+}
+
+/* Global Overrides */
+body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif !important;
+    background-color: var(--background-color) !important;
+}
+
+/* Navigation Bar Customization - ForIT Dark Navy */
+.navBar {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-navy) 100%) !important;
+    box-shadow: var(--shadow-md);
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.navBar .navBarButton {
+    color: var(--text-on-dark) !important;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.navBar .navBarButton:hover {
+    background-color: rgba(93, 173, 226, 0.2) !important;
+    transform: translateY(-1px);
+}
+
+.navBar .navBarButton.selected,
+.navBar .navBarButton:active {
+    background-color: var(--secondary-color) !important;
+    color: var(--primary-color) !important;
+}
+
+/* Form Styling */
+.ms-crm-Form {
+    background-color: var(--surface-color);
+    padding: calc(var(--spacing-unit) * 2);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+}
+
+.ms-crm-Form-Section {
+    margin-bottom: calc(var(--spacing-unit) * 3);
+    border: 1px solid rgba(93, 173, 226, 0.2);
+    border-radius: var(--border-radius);
+    padding: calc(var(--spacing-unit) * 2);
+    background: linear-gradient(to bottom, var(--surface-color) 0%, rgba(248, 251, 255, 0.5) 100%);
+    transition: var(--transition);
+}
+
+.ms-crm-Form-Section:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--secondary-color);
+}
+
+.ms-crm-Form-SectionHeader {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: calc(var(--spacing-unit) * 1.5);
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: var(--spacing-unit);
+    letter-spacing: 0.5px;
+}
+
+/* Input Fields */
+.ms-crm-Input,
+.ms-crm-SelectBox,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    border: 2px solid rgba(20, 47, 67, 0.2) !important;
+    border-radius: var(--border-radius) !important;
+    transition: var(--transition);
+    padding: 8px 12px !important;
+    background-color: var(--surface-color) !important;
+}
+
+.ms-crm-Input:focus,
+.ms-crm-SelectBox:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--secondary-color) !important;
+    box-shadow: 0 0 0 3px rgba(93, 173, 226, 0.2) !important;
+    outline: none !important;
+}
+
+/* Grid and View Customization */
+.ms-crm-List {
+    border: none;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.ms-crm-List-Header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-navy) 100%) !important;
+    color: var(--text-on-dark) !important;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.ms-crm-List-Row {
+    transition: var(--transition);
+    border-bottom: 1px solid rgba(93, 173, 226, 0.1);
+}
+
+.ms-crm-List-Row:hover {
+    background-color: rgba(93, 173, 226, 0.05) !important;
+    transform: translateX(2px);
+}
+
+.ms-crm-List-Row:nth-child(even) {
+    background-color: rgba(248, 251, 255, 0.5);
+}
+
+/* Command Bar Styling */
+.ms-crm-CommandBar {
+    background: linear-gradient(to right, var(--surface-color) 0%, var(--background-color) 100%);
+    border-bottom: 2px solid var(--secondary-color);
+    padding: var(--spacing-unit) calc(var(--spacing-unit) * 2);
+    box-shadow: var(--shadow-sm);
+}
+
+.ms-crm-CommandBar button,
+.ms-crm-Ribbon-Command {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+    box-shadow: var(--shadow-sm);
+}
+
+.ms-crm-CommandBar button:hover,
+.ms-crm-Ribbon-Command:hover {
+    background-color: var(--accent-color);
+    color: var(--text-on-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Dashboard Cards */
+.ms-crm-Dashboard-Card {
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    padding: calc(var(--spacing-unit) * 3);
+    margin-bottom: calc(var(--spacing-unit) * 3);
+    border: 1px solid rgba(93, 173, 226, 0.2);
+    transition: var(--transition);
+}
+
+.ms-crm-Dashboard-Card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--secondary-color);
+}
+
+.ms-crm-Dashboard-Card-Title {
+    color: var(--primary-color);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: calc(var(--spacing-unit) * 2);
+    padding-bottom: var(--spacing-unit);
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+/* Business Process Flow */
+.ms-crm-BP-StageContainer {
+    background: linear-gradient(to right, var(--surface-color) 0%, var(--background-color) 100%);
+    border: 2px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+}
+
+.ms-crm-BP-Stage {
+    transition: var(--transition);
+}
+
+.ms-crm-BP-Stage.active {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%) !important;
+    color: var(--primary-color) !important;
+    font-weight: 600;
+    box-shadow: var(--shadow-md);
+}
+
+.ms-crm-BP-Stage.completed {
+    background-color: var(--success-color) !important;
+    color: var(--text-on-dark) !important;
+}
+
+/* Quick View Forms */
+.ms-crm-QuickView {
+    background: linear-gradient(to bottom, var(--surface-color) 0%, var(--background-color) 100%);
+    border-radius: var(--border-radius);
+    padding: calc(var(--spacing-unit) * 2);
+    margin: calc(var(--spacing-unit) * 2) 0;
+    border: 1px solid rgba(93, 173, 226, 0.2);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Timeline */
+.ms-crm-Timeline-Item {
+    border-left: 3px solid var(--secondary-color);
+    padding-left: calc(var(--spacing-unit) * 3);
+    margin-bottom: calc(var(--spacing-unit) * 3);
+    transition: var(--transition);
+}
+
+.ms-crm-Timeline-Item:hover {
+    border-left-color: var(--primary-color);
+}
+
+.ms-crm-Timeline-Item::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+    border-radius: 50%;
+    border: 2px solid var(--surface-color);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+}
+
+.status-badge.active {
+    background: linear-gradient(135deg, var(--success-color) 0%, #2ECC71 100%);
+    color: var(--text-on-dark);
+    box-shadow: 0 2px 4px rgba(39, 174, 96, 0.3);
+}
+
+.status-badge.inactive {
+    background-color: var(--text-disabled);
+    color: var(--text-on-dark);
+}
+
+.status-badge.pending {
+    background: linear-gradient(135deg, var(--warning-color) 0%, #F5B041 100%);
+    color: var(--text-on-dark);
+    box-shadow: 0 2px 4px rgba(243, 156, 18, 0.3);
+}
+
+/* Custom Buttons - ForIT Style */
+.custom-button,
+button.primary {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+    color: var(--primary-color);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+    letter-spacing: 0.5px;
+}
+
+.custom-button:hover,
+button.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-color) 100%);
+}
+
+.custom-button.secondary,
+button.secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.custom-button.secondary:hover,
+button.secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--text-on-dark);
+}
+
+/* Links */
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Loading Spinner - ForIT Style */
+.custom-loader {
+    border: 3px solid var(--background-color);
+    border-top: 3px solid var(--secondary-color);
+    border-right: 3px solid var(--accent-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Tooltips */
+.ms-crm-Tooltip {
+    background-color: var(--dark-navy);
+    color: var(--text-on-dark);
+    border-radius: var(--border-radius);
+    padding: 8px 12px;
+    font-size: 12px;
+    box-shadow: var(--shadow-lg);
+}
+
+/* Charts and Visualizations */
+.ms-crm-Chart {
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    background-color: var(--surface-color);
+    padding: var(--spacing-unit);
+}
+
+/* Notifications */
+.ms-crm-Notification {
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    padding: calc(var(--spacing-unit) * 2);
+    margin-bottom: var(--spacing-unit);
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.ms-crm-Notification.success {
+    background-color: var(--success-color);
+    color: var(--text-on-dark);
+    border-left: 4px solid #1E8449;
+}
+
+.ms-crm-Notification.warning {
+    background-color: var(--warning-color);
+    color: var(--text-on-dark);
+    border-left: 4px solid #D68910;
+}
+
+.ms-crm-Notification.error {
+    background-color: var(--error-color);
+    color: var(--text-on-dark);
+    border-left: 4px solid #C0392B;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .ms-crm-Form-Section {
+        padding: var(--spacing-unit);
+        margin-bottom: calc(var(--spacing-unit) * 2);
+    }
+    
+    .ms-crm-Dashboard-Card {
+        padding: calc(var(--spacing-unit) * 2);
+    }
+    
+    .custom-button {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}

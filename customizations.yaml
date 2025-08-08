@@ -1,0 +1,227 @@
+# Dynamics 365 Sales Customization Mapping
+# This file tracks all customizations made to the Dynamics Sales instance
+
+metadata:
+  instance: "your-instance.crm.dynamics.com"
+  environment: "production"
+  lastSync: null
+  version: "1.0.0"
+
+theme:
+  # ForIT Brand colors - matching forit.io
+  colors:
+    primary: "#142F43"        # ForIT Navy Blue
+    secondary: "#5DADE2"      # ForIT Light Blue
+    success: "#27AE60"        # Success green
+    warning: "#F39C12"        # Warning amber
+    error: "#E74C3C"          # Error red
+    background: "#F8FBFF"     # Light blue-tinted white
+    surface: "#FFFFFF"        # White surface
+    navbarBackground: "#0A1A26"  # Darker navy for navbar
+    navbarShelf: "#142F43"    # Primary navy for shelf
+    headerColor: "#142F43"    # Navy for headers
+    processControl: "#5DADE2" # Light blue for process
+    text:
+      primary: "#142F43"      # Navy text
+      secondary: "#4A5F7A"    # Muted navy text
+      disabled: "#A0B3C7"     # Light blue-gray disabled
+  
+  typography:
+    fontFamily: "'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif"
+    fontSizes:
+      small: "12px"
+      regular: "14px"
+      medium: "16px"
+      large: "20px"
+      xlarge: "24px"
+  
+  spacing:
+    unit: "8px"
+    small: "4px"
+    medium: "8px"
+    large: "16px"
+    xlarge: "32px"
+  
+  logo:
+    url: "/assets/forit-logo.png"
+    width: "180px"
+    height: "45px"
+    altText: "ForIT Logo"
+
+navigation:
+  # Custom navigation and sitemap modifications
+  customMenuItems:
+    - name: "Custom Dashboard"
+      url: "/main.aspx?pagetype=dashboard&id=custom-dash-1"
+      icon: "Dashboard"
+      position: 1
+    - name: "Reports Hub"
+      url: "/main.aspx?pagetype=entitylist&etn=report"
+      icon: "Report"
+      position: 2
+  
+  hiddenItems:
+    - "Competitors"
+    - "Literature"
+
+forms:
+  # Form customizations per entity
+  account:
+    - formId: "main-account-form"
+      sections:
+        - name: "Company Information"
+          fields:
+            - "name"
+            - "accountnumber"
+            - "customfield_industry"
+          layout: "2-column"
+        - name: "Contact Details"
+          fields:
+            - "telephone1"
+            - "emailaddress1"
+            - "websiteurl"
+          layout: "3-column"
+      
+      hiddenFields:
+        - "fax"
+        - "tickersymbol"
+      
+      requiredFields:
+        - "name"
+        - "customfield_industry"
+  
+  contact:
+    - formId: "main-contact-form"
+      customScripts:
+        - "scripts/contactValidation.js"
+      businessRules:
+        - name: "Show VIP Section"
+          condition: "customfield_vipstatus == true"
+          action: "show"
+          target: "vip_section"
+
+views:
+  # Custom views and filters
+  account:
+    - viewId: "active-accounts-custom"
+      name: "Active Customers"
+      fetchXml: |
+        <fetch>
+          <entity name="account">
+            <attribute name="name" />
+            <attribute name="accountnumber" />
+            <attribute name="revenue" />
+            <filter>
+              <condition attribute="statecode" operator="eq" value="0" />
+              <condition attribute="customfield_customertype" operator="eq" value="1" />
+            </filter>
+            <order attribute="revenue" descending="true" />
+          </entity>
+        </fetch>
+      isDefault: true
+  
+  opportunity:
+    - viewId: "high-value-opportunities"
+      name: "High Value Pipeline"
+      fetchXml: |
+        <fetch>
+          <entity name="opportunity">
+            <attribute name="name" />
+            <attribute name="estimatedvalue" />
+            <attribute name="estimatedclosedate" />
+            <filter>
+              <condition attribute="estimatedvalue" operator="gt" value="100000" />
+              <condition attribute="statecode" operator="eq" value="0" />
+            </filter>
+          </entity>
+        </fetch>
+
+dashboards:
+  # Dashboard configurations
+  - dashboardId: "sales-performance-dash"
+    name: "Sales Performance"
+    components:
+      - type: "chart"
+        entityType: "opportunity"
+        chartType: "funnel"
+        title: "Sales Pipeline"
+        position: { row: 1, column: 1, width: 2, height: 1 }
+      
+      - type: "list"
+        entityType: "lead"
+        viewId: "hot-leads"
+        title: "Hot Leads"
+        position: { row: 1, column: 3, width: 1, height: 1 }
+
+workflows:
+  # Automated processes and workflows
+  - workflowId: "lead-qualification"
+    name: "Auto Lead Qualification"
+    trigger: "onCreate"
+    entity: "lead"
+    conditions:
+      - field: "budget"
+        operator: "gt"
+        value: 50000
+    actions:
+      - type: "updateField"
+        field: "leadqualitycode"
+        value: "1"  # Hot
+      - type: "createTask"
+        subject: "Follow up with high-value lead"
+        dueIn: "1 day"
+
+webResources:
+  # Custom web resources (JS, CSS, HTML)
+  - name: "custom_styles"
+    type: "css"
+    path: "webresources/styles/custom.css"
+    description: "Global custom styles"
+  
+  - name: "validation_script"
+    type: "javascript"
+    path: "webresources/scripts/validation.js"
+    description: "Form validation utilities"
+
+securityRoles:
+  # Custom security role modifications
+  customRoles:
+    - name: "Sales Manager Enhanced"
+      baseRole: "Sales Manager"
+      additionalPrivileges:
+        - entity: "customentity_forecast"
+          read: true
+          write: true
+          create: true
+          delete: false
+
+businessUnits:
+  # Business unit specific customizations
+  - name: "North America"
+    defaultCurrency: "USD"
+    customFields:
+      - "region_code"
+      - "territory_manager"
+
+plugins:
+  # Custom plugins and extensions
+  - name: "OpportunityScoring"
+    assembly: "CustomPlugins.dll"
+    events:
+      - message: "Create"
+        entity: "opportunity"
+        stage: "PostOperation"
+      - message: "Update"
+        entity: "opportunity"
+        stage: "PreOperation"
+
+integrations:
+  # External system integrations
+  - name: "ERP Sync"
+    type: "scheduled"
+    frequency: "daily"
+    endpoint: "https://erp.company.com/api/sync"
+    entities:
+      - "account"
+      - "contact"
+      - "product"
