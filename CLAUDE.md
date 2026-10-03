@@ -694,7 +694,7 @@ curl -X POST "https://forit.crm.dynamics.com/api/data/v9.2/workflows" \
 
 ### Trigger URL
 ```
-https://3d37c1782b8cee0989ee8505fbd6ba.1e.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/dd8be26a212042a1b934b52da9a8bf97/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=-FaEVzc97Y-F7gn0weW9a-pj6u2iKHUh-MRUfEZ4sjs
+https://3d37c1782b8cee0989ee8505fbd6ba.1e.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/dd8be26a212042a1b934b52da9a8bf97/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=<REDACTED — rotated 2026-10-03; get the live URL from the flow owner, never commit it>
 ```
 
 ### Request Schema
@@ -742,7 +742,7 @@ https://3d37c1782b8cee0989ee8505fbd6ba.1e.environment.api.powerplatform.com:443/
 
 ### Trigger URL
 ```
-https://3d37c1782b8cee0989ee8505fbd6ba.1e.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/dacd824ab71641fd93361ddaa6257bc8/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=HIFi5GQfclCl7un01wy1ufc7hX5I54fbmutsB13RIdQ
+https://3d37c1782b8cee0989ee8505fbd6ba.1e.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/dacd824ab71641fd93361ddaa6257bc8/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=<REDACTED — rotated 2026-10-03; get the live URL from the flow owner, never commit it>
 ```
 
 ### CRITICAL: This flow MUST be used for job applications
@@ -801,7 +801,7 @@ Fixed in commit `f983612`.
 
 ### Trigger URL
 ```
-https://3d37c1782b8cee0989ee8505fbd6ba.1e.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/6ecbaa11399c4828a6010436c14d1e22/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=MXZwCS542Tg9FcAjd3Y7LCsSS3QD9Xt6ngus3i1DVx0
+https://3d37c1782b8cee0989ee8505fbd6ba.1e.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/6ecbaa11399c4828a6010436c14d1e22/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=<REDACTED — rotated 2026-10-03; get the live URL from the flow owner, never commit it>
 ```
 
 ### Request Schema

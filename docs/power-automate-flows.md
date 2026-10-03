@@ -62,7 +62,7 @@ This document catalogs all custom ForIT Power Automate flows in Dynamics 365, th
 
 **Trigger URL:**
 ```
-https://3d37c1782b8cee0989ee8505fbd6ba.1e.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/dacd824ab71641fd93361ddaa6257bc8/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=HIFi5GQfclCl7un01wy1ufc7hX5I54fbmutsB13RIdQ
+https://3d37c1782b8cee0989ee8505fbd6ba.1e.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/dacd824ab71641fd93361ddaa6257bc8/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=<REDACTED — rotated 2026-10-03; get the live URL from the flow owner, never commit it>
 ```
 
 ### Dolores (Chat Widget)
